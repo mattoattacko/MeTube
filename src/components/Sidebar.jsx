@@ -2,9 +2,7 @@ import React from 'react'
 import { Stack } from '@mui/material'
 import { categories } from '../utils/constants'
 
-const selectedCategory = 'New' //we use this to make sure the button displays style correctly. Will be red if it is currently selected.
-
-const Sidebar = () => (
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     direction='row'
     sx={{
@@ -16,6 +14,9 @@ const Sidebar = () => (
     {categories.map((category) => (
       <button
         key={category.name}
+        //the logic to update the selected category
+        onClick={() => setSelectedCategory(category.name)}
+
         style={{
           backgroundColor: category.name === selectedCategory && '#FC1503', 
           color: 'white' //buttons are white unless selected, then red.
