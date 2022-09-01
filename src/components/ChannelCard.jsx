@@ -5,7 +5,7 @@ import { CheckCircle } from '@mui/icons-material'
 
 import { demoProfilePicture } from '../utils/constants'
 
-const ChannelCard = ({ channelDetail }) => (
+const ChannelCard = ({ channelDetail, marginTop }) => (
 
   <Box
     sx={{
@@ -17,6 +17,7 @@ const ChannelCard = ({ channelDetail }) => (
       width: { xs: '365px', md: '320px' },
       height: '326px',
       margin: 'auto',
+      marginTop //we pass marginTop here only when we are on a channels detail page. This is because we want the channel card to be positioned differently on the channel detail page than on the home page
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>

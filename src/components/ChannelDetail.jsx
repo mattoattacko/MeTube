@@ -31,6 +31,13 @@ const ChannelDetail = () => {
           zIndex: 10,
         }}           
       />
+      <ChannelCard channelDetail={channelDetail} marginTop='-110px' /> 
+      {/* we pass marginTop here only when we are on a channels detail page. This is because we want the channel card to be positioned differently on the channel detail page than on the home page */}
+      </Box>
+
+      <Box display='flex' p='2'>
+        <Box sx={{ mr: { sm: '100px' }}} />
+        <Videos videos={videos} />
       </Box>
     </Box>
   )
