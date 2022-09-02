@@ -11,7 +11,8 @@ const Feed = () => {
   const [videos, setVideos] = useState([]); //we want to store the videos in an array.
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) => setVideos(data.items)) //we pass the remainder of the url we want to call. To extract the data, we need to attach a '.then' function. This is needed because its an async function. '.Then' will be executed once we call the function and once it returns a promise that resolves to a successful response.
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+      .then((data) => setVideos(data.items)) //we pass the remainder of the url we want to call. To extract the data, we need to attach a '.then' function. This is needed because its an async function. '.Then' will be executed once we call the function and once it returns a promise that resolves to a successful response.
   }, [selectedCategory]);
 
   return (
