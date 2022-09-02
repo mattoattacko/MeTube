@@ -2,12 +2,17 @@ import React from 'react'
 import { Stack, Box } from '@mui/material'
 import { VideoCard, ChannelCard } from './'
 
+//for the 'direction' that is passed in below, we are using it to determine if we want the videos to be displayed in a row or a column. We are using this in the VideoDetail component, where we want the videos to be displayed in a column. We are also using it in the Home component, where we want the videos to be displayed in a row. We are passing in the direction prop, and setting it equal to 'column' in the VideoDetail component, and setting it equal to 'row' in the Home component. We are also setting a default value for the direction prop, so that if we don't pass in a direction prop, it will default to 'row'.
+//code reads as "first we check if there is a specific direction passed in and used that one. If it hasn't been passed in, use row."
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, direction }) => {
+
+  // loader
+  if (!videos?.length) return 'Loading...'
 
   return (
     <Stack
-      direction='row'
+      direction={direction || 'row'}
       flexWrap='wrap'
       justifyContent='start'
       gap={2}
