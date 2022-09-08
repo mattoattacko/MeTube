@@ -34,9 +34,10 @@ const Feed = () => {
         <Typography
           className='copyright'
           variant='body2'
+          textAlign='center'
           sx={{ mt: 1.5, color: '#fff' }}
         >
-          Copyright 2022 WCC
+          © 2022 WCC
         </Typography>
       </Box>
 
@@ -57,7 +58,7 @@ const Feed = () => {
         >      
           {selectedCategory} <span
                 style={{
-                  color: '#F31503'
+                  color: '#0874c2'
                 }}
               >
               Videos
